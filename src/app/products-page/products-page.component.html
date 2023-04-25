@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+   <div class="col-12 mt-3 mb-3">
+    <h2 class="text-center">Our Product's</h2>
+   </div>
+   <div class=" col-6 col-md-4 col-lg-3 mb-5 mx-auto" *ngFor="let post of productsData|async">
+    <mat-card class="example-card" (click)="productDetails(post.id)">
+        <div class="imageBox">
+        <img mat-card-image src={{post.image}} alt="Product Image" class="product-images  img-fluid" height="200" width="200">
+        </div>
+        <mat-card-header>
+            <p class="d-inline-block text-center text-truncate fw-bold mx-auto" style="max-width: 150px;">
+                {{post.title}}
+              </p>
+        </mat-card-header>
+        <!-- <p class="fs-4 ms-3 mt-2">
+          {{post.price |currency:'INR':'symbol-narrow'}}
+      </p>  -->
+      <!-- <div class="d-flex justify-content-center mt-2 mb-3">             
+          <button mat-button mat-raised-button color="primary" (click)="productDetails(post.id)">View Product</button>
+      </div> -->
+      </mat-card>      
+   </div>
+  </div>
+</div>
